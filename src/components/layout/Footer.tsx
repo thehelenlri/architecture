@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin,  Instagram, Linkedin, Twitter } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (page: 'home' | 'projects' | 'about' | 'blog' | 'contact') => void;
@@ -107,7 +107,6 @@ export default function Footer({ onNavigate }: FooterProps) {
           </p>
           <div className="flex space-x-6">
             {[
-              { Icon: Facebook, href: '#' },
               { Icon: Instagram, href: '#' },
               { Icon: Linkedin, href: '#' },
               { Icon: Twitter, href: '#' },
