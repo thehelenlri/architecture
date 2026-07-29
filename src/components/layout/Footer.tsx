@@ -14,7 +14,7 @@ export default function Footer({ onNavigate }: FooterProps) {
     <footer className="bg-gray-900 dark:bg-black text-white">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          <div>
+          <div>npm 
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-10 h-10 bg-gradient-to-br from-slate-200 to-slate-400 rounded-lg flex items-center justify-center">
                 <span className="text-gray-900 font-bold text-xl">A</span>
