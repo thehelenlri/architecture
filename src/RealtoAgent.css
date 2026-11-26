@@ -1,0 +1,460 @@
+﻿.ra-section {
+  --ra-bg: #f6f6f6;
+  --ra-card: #ffffff;
+  --ra-text: #211e1c;
+  --ra-muted: #81817f;
+  --ra-line: #dededc;
+  --ra-button: #292019;
+  --ra-on-button: #ffffff;
+
+  width: 100%;
+  max-width: none;
+  padding: 90px 0 65px;
+  background: var(--ra-bg);
+  color: var(--ra-text);
+  scroll-margin-top: 70px;
+}
+
+.realto.dark .ra-section {
+  --ra-bg: #1b1b1b;
+  --ra-card: #252525;
+  --ra-text: #f1f1ed;
+  --ra-muted: #aeaeaa;
+  --ra-line: #3d3d3d;
+  --ra-button: #f3eee6;
+  --ra-on-button: #211e1c;
+}
+
+.ra-section * {
+  box-sizing: border-box;
+}
+
+.ra-container {
+  width: min(1080px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+/* PROFILE */
+
+.ra-profile {
+  display: grid;
+  grid-template-columns: minmax(0,29%) minmax(0,1fr);
+  gap: 34px;
+  align-items: stretch;
+}
+
+.ra-portrait {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 23px;
+  background: #e5d7c2;
+}
+
+.realto .ra-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center 38%;
+  border-radius: 0;
+}
+
+.ra-portrait-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: #8b7b65;
+  background: radial-gradient(
+    ellipse at 50% 35%,
+    #f0e4d2,
+    #c4ae90
+  );
+}
+
+.ra-portrait-placeholder span {
+  font-size: 12px;
+}
+
+.ra-profile-content {
+  min-width: 0;
+}
+
+.ra-profile-header {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto;
+  align-items: start;
+  gap: 16px;
+  padding-top: 6px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid var(--ra-line);
+}
+
+.realto .ra-identity h2 {
+  font-size: clamp(25px,2.7vw,37px);
+  font-weight: 500;
+  letter-spacing: -.065em;
+  line-height: 1.15;
+  color: var(--ra-text);
+  margin: 0;
+}
+
+.realto .ra-identity p {
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--ra-muted);
+  margin-top: 13px;
+  font-weight: 400;
+}
+
+.ra-profile-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 19px;
+}
+
+.ra-review {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.ra-review strong {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.ra-review span {
+  font-size: 11px;
+  color: var(--ra-muted);
+}
+
+.ra-profile-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.realto .ra-profile-actions button {
+  border: 1px solid var(--ra-line);
+  border-radius: 100px;
+  background: var(--ra-card);
+  color: var(--ra-text);
+  min-height: 36px;
+  padding: 8px 17px;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: transform .2s,box-shadow .2s;
+}
+
+.realto .ra-profile-actions button.ra-primary {
+  background: var(--ra-button);
+  color: var(--ra-on-button);
+  border-color: transparent;
+  box-shadow: 0 8px 15px #00000020;
+}
+
+.ra-profile-actions button:hover {
+  transform: translateY(-2px);
+}
+
+.ra-about {
+  padding-top: 25px;
+}
+
+.realto .ra-about h3 {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -.025em;
+  color: var(--ra-text);
+  margin: 0 0 12px;
+}
+
+.realto .ra-about p {
+  font-size: 12px;
+  line-height: 1.95;
+  color: var(--ra-muted);
+  font-weight: 400;
+  margin: 0;
+}
+
+.ra-notice {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-top: 10px;
+  border: 1px solid var(--ra-line);
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.ra-notice button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+}
+
+/* THREE REFERENCE CARDS */
+
+.ra-charts {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 13px;
+  margin-top: 48px;
+}
+
+.ra-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 23px 24px 24px;
+  background: var(--ra-card);
+  border: 0;
+  border-radius: 26px;
+  box-shadow: none;
+  min-height: 385px;
+  aspect-ratio: .86;
+}
+
+.realto .ra-card h3 {
+  font-size: clamp(16px,1.5vw,21px);
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: -.04em;
+  color: var(--ra-text);
+  margin: 0;
+}
+
+.ra-chart {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0 8px;
+  direction: ltr;
+}
+
+.realto .ra-chart-svg {
+  display: block;
+  width: 100%;
+  max-width: 295px;
+  height: auto;
+  overflow: visible;
+}
+
+.ra-svg-number {
+  fill: var(--ra-text);
+  font-family: Arial,Helvetica,sans-serif;
+  font-weight: 400;
+  letter-spacing: -3px;
+}
+
+.ra-svg-unit {
+  fill: var(--ra-muted);
+  font-family: Arial,Helvetica,sans-serif;
+  font-weight: 400;
+}
+
+/* BOTTOM PERCENTAGES */
+
+.ra-card-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: start;
+  margin-top: auto;
+}
+
+.ra-metric {
+  min-width: 0;
+}
+
+.ra-metric-top {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 9px;
+}
+
+.ra-metric-top strong {
+  color: var(--ra-text);
+  font-size: 21px;
+  font-weight: 400;
+  letter-spacing: -.045em;
+}
+
+.ra-badge {
+  display: inline-block;
+  font-size: 8px;
+  line-height: 1.2;
+  padding: 6px 9px;
+  border-radius: 30px;
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+.ra-badge.gold {
+  background: #f9d55b;
+  color: #6f5620;
+}
+
+.ra-badge.peach {
+  background: #ee9f79;
+  color: #663b27;
+}
+
+.ra-metric small {
+  display: block;
+  font-size: 9px;
+  line-height: 1.7;
+  color: var(--ra-muted);
+}
+
+.ra-demo-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: var(--ra-muted);
+  font-size: 10px;
+  margin-top: 20px;
+}
+
+/* RTL */
+
+.ra-section[lang="fa"] {
+  font-family: Tahoma,Arial,sans-serif;
+}
+
+.realto .ra-section[lang="fa"] h2,
+.realto .ra-section[lang="fa"] h3 {
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+
+.ra-section[lang="fa"] .ra-identity h2 {
+  font-size: 30px;
+}
+
+/* TABLET */
+
+@media(max-width:1000px) {
+
+  .ra-profile {
+    gap: 22px;
+  }
+
+  .ra-profile-header {
+    grid-template-columns: 1fr;
+    padding-bottom: 18px;
+  }
+
+  .ra-profile-right {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .ra-card {
+    padding: 18px;
+    min-height: 300px;
+    aspect-ratio: auto;
+  }
+
+  .ra-metric-top strong {
+    font-size: 18px;
+  }
+
+  .ra-badge {
+    font-size: 7px;
+    padding: 5px 7px;
+  }
+
+}
+
+/* MOBILE */
+
+@media(max-width:680px) {
+
+  .ra-section {
+    padding: 45px 0 35px;
+  }
+
+  .ra-container {
+    width: calc(100% - 30px);
+  }
+
+  .ra-profile {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .ra-portrait {
+    width: min(100%,280px);
+    margin-inline: auto;
+    border-radius: 20px;
+  }
+
+  .ra-profile-header {
+    gap: 18px;
+  }
+
+  .realto .ra-identity h2 {
+    font-size: 28px;
+  }
+
+  .ra-profile-right {
+    align-items: flex-start;
+  }
+
+  .ra-charts {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .ra-card {
+    padding: 23px;
+    min-height: 365px;
+    aspect-ratio: auto;
+  }
+
+  .realto .ra-chart-svg {
+    max-width: 285px;
+  }
+
+  .ra-metric-top strong {
+    font-size: 22px;
+  }
+
+  .ra-badge {
+    font-size: 9px;
+  }
+
+  .ra-metric small {
+    font-size: 11px;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .ra-section * {
+    transition: none !important;
+  }
+}

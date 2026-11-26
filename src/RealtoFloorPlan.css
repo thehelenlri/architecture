@@ -1,0 +1,426 @@
+﻿.rp-section {
+  --rp-bg: #ffffff;
+  --rp-text: #252320;
+  --rp-muted: #818181;
+  --rp-line: #efefef;
+
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 76px 0 55px;
+  background: var(--rp-bg);
+  color: var(--rp-text);
+  scroll-margin-top: 80px;
+}
+
+.realto.dark .rp-section {
+  --rp-bg: #171615;
+  --rp-text: #f3f1ee;
+  --rp-muted: #aaa6a0;
+  --rp-line: #393632;
+}
+
+.rp-heading,
+.rp-layout,
+.rp-market,
+.rp-disclaimer {
+  width: min(1120px, calc(100% - 64px));
+  margin-inline: auto !important;
+}
+
+.rp-heading {
+  text-align: center;
+}
+
+.realto .rp-heading h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(27px, 3vw, 43px);
+  font-weight: 400;
+  letter-spacing: -.055em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.realto .rp-heading p {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--rp-muted);
+  line-height: 1.8;
+  margin-top: 9px;
+}
+
+.rp-layout {
+  display: grid;
+  grid-template-columns: 130px minmax(0,1fr) 48px;
+  align-items: center;
+  gap: 25px;
+  margin-top: 45px !important;
+}
+
+.rp-floor-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  align-self: center;
+}
+
+.rp-menu-caption {
+  color: var(--rp-muted);
+  font-size: 10px;
+  opacity: .7;
+  padding-inline-start: 14px;
+}
+
+.realto .rp-floor-menu button {
+  position: relative;
+  border: 0;
+  background: transparent;
+  color: var(--rp-muted);
+  text-align: start;
+  font-size: 13px;
+  padding: 0 14px;
+  transition: color .2s;
+}
+
+.realto .rp-floor-menu button.selected {
+  font-size: 17px;
+  color: var(--rp-text);
+  font-weight: 500;
+  letter-spacing: -.03em;
+}
+
+.rp-floor-menu button i {
+  position: absolute;
+  inset-inline-start: 0;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--rp-text);
+  transform: translateY(-50%);
+}
+
+.rp-plan-stage {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: 390px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 10px 0 25px;
+  direction: ltr;
+}
+
+.realto .rp-plan {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  transform-origin: center;
+  transition: transform .3s ease;
+}
+
+.rp-plan-caption {
+  position: absolute;
+  bottom: 0;
+  inset-inline: 0;
+  text-align: center;
+  font-size: 9px;
+  color: var(--rp-muted);
+}
+
+.rp-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-self: end;
+  padding-bottom: 30px;
+}
+
+.realto .rp-controls button {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: #fff;
+  color: #777;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 8px 24px #0000000c;
+  transition: .2s;
+}
+
+.realto.dark .rp-controls button {
+  background: #292725;
+  color: #dedbd5;
+}
+
+.rp-controls button:hover {
+  transform: translateY(-2px);
+}
+
+.rp-controls button:disabled {
+  opacity: .35;
+  cursor: default;
+}
+
+.rp-market {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 65px;
+  align-items: center;
+  margin-top: 38px !important;
+}
+
+.rp-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  gap: 10px;
+}
+
+.rp-scale {
+  width: 100%;
+  max-width: 240px;
+  margin-bottom: 12px;
+}
+
+.rp-scale-labels {
+  display: flex;
+  justify-content: space-between;
+  color: var(--rp-muted);
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+
+.rp-track {
+  position: relative;
+  width: 100%;
+  height: 24px;
+  display: flex;
+  gap: 4px;
+}
+
+.rp-track-first {
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: linear-gradient(
+    90deg,
+    #fac7b1 0%,
+    #f8cead 40%,
+    #f6d791 100%
+  );
+}
+
+.rp-track-last {
+  flex: 1;
+  background: linear-gradient(
+    90deg,
+    #f7dc97,
+    #f6e28e
+  );
+  border-radius: 30px;
+}
+
+.rp-marker {
+  position: absolute;
+  top: -9px;
+  bottom: 0;
+  width: 1px;
+  background: #d8d8d8;
+}
+
+.rp-marker::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -4px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid #d8d8d8;
+}
+
+.rp-metric-label {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--rp-muted);
+  font-size: 13px;
+}
+
+.rp-metric-label svg {
+  color: var(--rp-text);
+  flex-shrink: 0;
+}
+
+.rp-metric strong {
+  display: block;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -.045em;
+  color: var(--rp-text);
+}
+
+.rp-metric-1 .rp-scale {
+  order: 3;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.rp-disclaimer {
+  text-align: center;
+  margin-top: 28px !important;
+  color: var(--rp-muted);
+  font-size: 10px;
+}
+
+/* Persian RTL */
+
+html[lang="fa"] .rp-heading h2 {
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: clamp(24px,2.6vw,36px);
+  letter-spacing: 0;
+  line-height: 1.7;
+}
+
+html[lang="fa"] .rp-section {
+  font-family: Tahoma,Arial,sans-serif;
+}
+
+html[lang="fa"] .rp-floor-menu button.selected {
+  font-size: 15px;
+  letter-spacing: 0;
+}
+
+/* Tablet */
+
+@media(max-width:1000px) {
+
+  .rp-layout {
+    grid-template-columns: 100px minmax(0,1fr) 38px;
+    gap: 12px;
+  }
+
+  .rp-plan-stage {
+    min-height: 280px;
+  }
+
+  .rp-market {
+    gap: 30px;
+  }
+
+  .rp-controls button {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+}
+
+/* Mobile */
+
+@media(max-width:680px) {
+
+  .rp-section {
+    padding-top: 50px;
+    padding-bottom: 35px;
+  }
+
+  .rp-heading,
+  .rp-layout,
+  .rp-market,
+  .rp-disclaimer {
+    width: calc(100% - 28px);
+  }
+
+  .realto .rp-heading h2 {
+    font-size: 28px;
+  }
+
+  .realto .rp-heading p {
+    font-size: 11px;
+  }
+
+  .rp-layout {
+    grid-template-columns: minmax(0,1fr) 36px;
+    gap: 10px;
+    margin-top: 25px !important;
+  }
+
+  .rp-floor-menu {
+    grid-column: 1/-1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .rp-menu-caption {
+    display: none;
+  }
+
+  .realto .rp-floor-menu button {
+    padding: 8px 10px;
+    font-size: 11px;
+    border: 1px solid var(--rp-line);
+    border-radius: 30px;
+  }
+
+  .realto .rp-floor-menu button.selected {
+    font-size: 12px;
+    background: #f2e7d2;
+    border-color: #ead9b8;
+    color: #29231f;
+  }
+
+  .rp-floor-menu button i {
+    display: none;
+  }
+
+  .rp-plan-stage {
+    min-height: 0;
+  }
+
+  .rp-market {
+    grid-template-columns: 1fr;
+    gap: 23px;
+    margin-top: 25px !important;
+  }
+
+  .rp-scale {
+    max-width: none;
+    margin-bottom: 0;
+  }
+
+  .rp-metric {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--rp-line);
+  }
+
+  .rp-metric-1 .rp-scale {
+    order: 0;
+    margin-top: 0;
+  }
+
+  .rp-track {
+    height: 20px;
+  }
+
+  .rp-metric strong {
+    font-size: 19px;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .rp-section * {
+    transition: none !important;
+  }
+}

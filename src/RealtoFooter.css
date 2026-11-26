@@ -1,0 +1,641 @@
+﻿.rft-root {
+  --rft-text: #26211d;
+  --rft-muted: #625e58;
+  --rft-line: rgba(255,255,255,.65);
+  --rft-button: #2b211b;
+  --rft-on-button: #ffffff;
+  --rft-flower-center: #ffffff;
+  --rft-end: #fafafa;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 80px;
+  background: #e9e8e3;
+  color: var(--rft-text);
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-margin-top: 65px;
+}
+
+.rft-root *,
+.rft-root *::before,
+.rft-root *::after {
+  box-sizing: border-box;
+}
+
+/* BACKGROUND IMAGE: FIXED LAYERING */
+
+.rft-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.realto .rft-background img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: 68% center;
+  opacity: 1;
+}
+
+.rft-background-fade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(241,245,246,.87) 0%,
+      rgba(241,245,246,.35) 19%,
+      rgba(239,235,228,.18) 35%,
+      rgba(238,234,226,.66) 52%,
+      rgba(242,240,234,.91) 79%,
+      #fafafa 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(235,239,237,.63),
+      rgba(235,239,237,.07) 75%
+    );
+}
+
+.rft-root[dir="rtl"] .rft-background-fade {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(241,245,246,.87),
+      rgba(241,245,246,.35) 19%,
+      rgba(239,235,228,.18) 35%,
+      rgba(238,234,226,.66) 52%,
+      rgba(242,240,234,.91) 79%,
+      #fafafa 100%
+    ),
+    linear-gradient(
+      270deg,
+      rgba(235,239,237,.63),
+      rgba(235,239,237,.07) 75%
+    );
+}
+
+.rft-container {
+  position: relative;
+  z-index: 2;
+  width: min(1200px, calc(100% - 100px));
+  margin-inline: auto;
+}
+
+/* TOP CTA */
+
+.rft-cta {
+  min-height: 410px;
+  padding-top: 52px;
+  padding-bottom: 65px;
+}
+
+.realto .rft-cta h2 {
+  margin: 0;
+  max-width: 850px;
+  color: var(--rft-text);
+  font-size: clamp(30px,3.8vw,49px);
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -.055em;
+}
+
+.realto .rft-cta p {
+  max-width: 610px;
+  margin-top: 16px;
+  color: var(--rft-muted);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.realto .rft-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+  min-height: 43px;
+  padding: 11px 22px;
+  background: var(--rft-button);
+  color: var(--rft-on-button);
+  border: 0;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 400;
+  box-shadow: 0 12px 18px rgba(44,32,24,.17);
+  transition: transform .25s, box-shadow .25s;
+}
+
+.rft-cta .rft-button {
+  margin-top: 40px;
+}
+
+.rft-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px #00000024;
+}
+
+/* GLASS INFORMATION GRID */
+
+.rft-information {
+  display: grid;
+  grid-template-columns: 32% minmax(0,1fr);
+  border-top: 1px solid var(--rft-line);
+  border-bottom: 1px solid var(--rft-line);
+}
+
+.rft-brand-column {
+  padding: 40px 30px 45px 0;
+  padding-inline-start: 0;
+  padding-inline-end: 30px;
+  border-inline-end: 1px solid var(--rft-line);
+}
+
+.realto .rft-brand-column .rft-brand {
+  color: var(--rft-text);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -.045em;
+  margin: 0 0 20px;
+}
+
+.realto .rft-description {
+  color: var(--rft-muted);
+  font-size: 13px;
+  line-height: 1.8;
+  font-weight: 400;
+  max-width: 290px;
+}
+
+.realto .rft-social-title {
+  margin: 38px 0 20px;
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -.035em;
+}
+
+.rft-socials {
+  display: flex;
+  gap: 8px;
+}
+
+.realto .rft-socials button {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,.18);
+  border: 1px solid var(--rft-line);
+  border-radius: 50%;
+  color: var(--rft-text);
+  transition: .25s;
+}
+
+.rft-socials button:hover {
+  background: rgba(255,255,255,.8);
+  color: #26211d;
+  transform: translateY(-2px);
+}
+
+.rft-right {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* HORIZONTAL NAVIGATION */
+
+.rft-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 22px 25px;
+  border-bottom: 1px solid var(--rft-line);
+}
+
+.realto .rft-navigation button {
+  border: 0;
+  border-radius: 40px;
+  background: rgba(255,255,255,.37);
+  color: var(--rft-text);
+  min-height: 35px;
+  padding: 9px 18px;
+  font-size: 12px;
+  font-weight: 400;
+  transition: .25s;
+}
+
+.rft-navigation button:hover {
+  background: rgba(255,255,255,.85);
+  color: #26211d;
+}
+
+/* CONTACT AND NEWSLETTER */
+
+.rft-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex: 1;
+}
+
+.rft-contact,
+.rft-newsletter {
+  padding: 39px 35px;
+  min-width: 0;
+}
+
+.rft-contact {
+  border-inline-end: 1px solid var(--rft-line);
+}
+
+.realto .rft-contact h3,
+.realto .rft-newsletter h3 {
+  font-size: clamp(16px,1.65vw,21px);
+  font-weight: 500;
+  color: var(--rft-text);
+  letter-spacing: -.04em;
+  margin: 0 0 25px;
+}
+
+.realto .rft-contact-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  max-width: 100%;
+  background: rgba(255,255,255,.12);
+  color: var(--rft-text);
+  border: 1px solid var(--rft-line);
+  padding: 10px 17px;
+  border-radius: 40px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  transition: .25s;
+}
+
+.rft-contact-pill:hover {
+  background: rgba(255,255,255,.7);
+  color: #26211d;
+}
+
+.rft-email-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--rft-line);
+  padding-bottom: 9px;
+  margin-bottom: 32px;
+}
+
+.realto .rft-email-field input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--rft-text);
+  padding: 8px 0;
+  font-size: 12px;
+}
+
+.rft-email-field input::placeholder {
+  color: var(--rft-muted);
+  opacity: 1;
+}
+
+.rft-root[dir="rtl"] input::placeholder {
+  text-align: right;
+}
+
+.realto .rft-email-field button {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border: 1px solid var(--rft-line);
+  background: rgba(255,255,255,.18);
+  color: var(--rft-text);
+  border-radius: 50%;
+}
+
+.rft-newsletter .rft-button {
+  min-height: 40px;
+}
+
+/* COPYRIGHT */
+
+.rft-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  align-items: center;
+  gap: 15px;
+  padding: 24px 0;
+  font-size: 11px;
+  color: var(--rft-muted);
+  border-bottom: 1px solid var(--rft-line);
+}
+
+.rft-bottom > span:nth-child(2) {
+  text-align: center;
+}
+
+.rft-legal {
+  display: flex;
+  justify-content: flex-end;
+  gap: 19px;
+}
+
+.realto .rft-legal button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--rft-muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* REALTO TYPOGRAPHIC LOGO */
+
+.rft-wordmark {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4%;
+  width: 100%;
+  padding: 43px 0 40px;
+  container-type: inline-size;
+}
+
+.rft-flower {
+  width: 15%;
+  height: auto;
+  flex-shrink: 0;
+  display: block;
+  filter: drop-shadow(0 2px 0 #00000010);
+}
+
+.realto .rft-wordmark strong {
+  display: block;
+  color: transparent;
+  background-image: url("/house2.avif");
+  background-size: cover;
+  background-position: center 56%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(55px,15vw,230px);
+  font-size: 18.8cqw;
+  font-weight: 800;
+  line-height: .95;
+  letter-spacing: -.065em;
+  white-space: nowrap;
+}
+
+/* DARK MODE */
+
+.realto.dark .rft-root {
+  --rft-text: #f5f1ec;
+  --rft-muted: #c7c1b8;
+  --rft-line: rgba(255,255,255,.18);
+  --rft-button: #f5f1ec;
+  --rft-on-button: #26211d;
+  --rft-flower-center: #24221f;
+  --rft-end: #171615;
+  background: #24221f;
+}
+
+.realto.dark .rft-background-fade {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(24,22,20,.88),
+      rgba(24,22,20,.32) 35%,
+      rgba(24,22,20,.74) 65%,
+      #171615 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(24,22,20,.66),
+      transparent 85%
+    );
+}
+
+.realto.dark .rft-root[dir="rtl"] .rft-background-fade {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(24,22,20,.88),
+      rgba(24,22,20,.32) 35%,
+      rgba(24,22,20,.74) 65%,
+      #171615 100%
+    ),
+    linear-gradient(
+      270deg,
+      rgba(24,22,20,.66),
+      transparent 85%
+    );
+}
+
+.realto.dark .rft-navigation button,
+.realto.dark .rft-socials button,
+.realto.dark .rft-contact-pill {
+  background: rgba(255,255,255,.07);
+}
+
+.realto.dark .rft-navigation button:hover,
+.realto.dark .rft-socials button:hover,
+.realto.dark .rft-contact-pill:hover {
+  background: rgba(255,255,255,.16);
+  color: var(--rft-text);
+}
+
+/* PERSIAN */
+
+.rft-root[lang="fa"] {
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+.realto .rft-root[lang="fa"] h2,
+.realto .rft-root[lang="fa"] h3 {
+  letter-spacing: 0;
+  line-height: 1.7;
+}
+
+.realto .rft-root[lang="fa"] .rft-cta h2 {
+  font-size: clamp(26px,3vw,40px);
+}
+
+/* NOTIFICATION */
+
+.rft-notice {
+  position: fixed;
+  bottom: 25px;
+  inset-inline-end: 25px;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  max-width: calc(100vw - 50px);
+  background: var(--rft-button);
+  color: var(--rft-on-button);
+  padding: 15px 20px;
+  border-radius: 14px;
+  box-shadow: 0 12px 35px #00000020;
+  font-size: 13px;
+}
+
+.rft-notice button {
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: inherit;
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+
+  .rft-container {
+    width: calc(100% - 50px);
+  }
+
+  .rft-cta {
+    min-height: 350px;
+  }
+
+  .rft-brand-column {
+    padding-inline-end: 20px;
+  }
+
+  .rft-contact,
+  .rft-newsletter {
+    padding: 30px 22px;
+  }
+
+  .rft-navigation {
+    gap: 6px;
+  }
+
+  .realto .rft-navigation button {
+    padding-inline: 12px;
+  }
+
+  .rft-bottom {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .rft-bottom > span:nth-child(2) {
+    display: none;
+  }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 680px) {
+
+  .rft-root {
+    margin-top: 50px;
+  }
+
+  .rft-container {
+    width: calc(100% - 36px);
+  }
+
+  .rft-cta {
+    min-height: 340px;
+    padding-top: 38px;
+    padding-bottom: 35px;
+  }
+
+  .realto .rft-cta h2 {
+    font-size: 31px;
+  }
+
+  .realto .rft-cta p {
+    font-size: 13px;
+  }
+
+  .rft-cta .rft-button {
+    margin-top: 24px;
+  }
+
+  .rft-information {
+    grid-template-columns: 1fr;
+  }
+
+  .rft-brand-column {
+    border-inline-end: 0;
+    border-bottom: 1px solid var(--rft-line);
+    padding: 25px 0;
+  }
+
+  .realto .rft-description {
+    max-width: 100%;
+  }
+
+  .realto .rft-social-title {
+    margin-top: 22px;
+  }
+
+  .rft-navigation {
+    justify-content: flex-start;
+    padding: 19px 0;
+  }
+
+  .rft-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .rft-contact,
+  .rft-newsletter {
+    padding: 25px 0;
+  }
+
+  .rft-contact {
+    border-inline-end: 0;
+    border-bottom: 1px solid var(--rft-line);
+  }
+
+  .rft-bottom {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .rft-legal {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .rft-wordmark {
+    padding: 30px 0;
+  }
+
+  .realto .rft-background img {
+    object-position: 62% center;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .rft-root * {
+    transition: none !important;
+  }
+
+}

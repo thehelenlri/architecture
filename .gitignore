@@ -14,4 +14,9 @@ dist/
 # logs
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
+yarn-error.log*.vercel/
+!.env.example
+.*-backups/
+.realto-rebuild-backup/
+*.backup
+*.backup.*
